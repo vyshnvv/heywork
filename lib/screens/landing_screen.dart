@@ -12,6 +12,8 @@ class LandingScreen extends StatefulWidget {
 class _LandingScreenState extends State<LandingScreen> {
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
         backgroundColor: primary,
@@ -22,12 +24,14 @@ class _LandingScreenState extends State<LandingScreen> {
             Image.asset(
               'assets/images/heyworklogo.png',
               width: double.infinity,
-              height: 400,
+              height: height / 2.5,
             ),
             const Text(
               "What are you looking for?",
               style: TextStyle(
-                  color: bgColor, fontWeight: FontWeight.bold, fontSize: 15),
+                  color: secondary10,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15),
             ),
             const SizedBox(
               height: 20,
@@ -35,15 +39,15 @@ class _LandingScreenState extends State<LandingScreen> {
             ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                  minimumSize: Size(180, 55),
-                  side: BorderSide(width: 1, color: bgColor),
+                  minimumSize: Size(width / 2, 55),
+                  side: BorderSide(width: 1, color: secondary10),
                   backgroundColor: primary,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15))),
               child: const Text(
                 "I want to Work",
                 style: TextStyle(
-                  color: bgColor,
+                  color: secondary10,
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
@@ -55,8 +59,8 @@ class _LandingScreenState extends State<LandingScreen> {
             ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                  minimumSize: Size(180, 55),
-                  shadowColor: secondary,
+                  minimumSize: Size(width / 2, 55),
+                  shadowColor: secondary20,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15))),
               child: const Text(
